@@ -126,9 +126,7 @@ describe('Extract QR Codes', () => {
     }, 10000)
 
     it.skip('Decode a vaccine cert from a pdf that has 2 qr codes', async () => {
-      const pdf = fs.readFileSync(
-        path.join(__dirname, 'pdfs', 'Teastas.pdf')
-      )
+      const pdf = fs.readFileSync(path.join(__dirname, 'pdfs', 'Teastas.pdf'))
 
       const result = await extractQRCodes({ source: { pdf } })
       expect(result.length).toEqual(2)
