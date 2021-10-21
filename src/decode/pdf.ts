@@ -54,8 +54,8 @@ NodeCanvasFactory.prototype = {
   },
 }
 
-export async function extractQRFromPDF(pdf: Buffer): Promise<string[]> {
-  // covert p[df to image
+export async function extractQRFromPDF(pdf: Buffer, scaleFactor: number): Promise<string[]> {
+  // convert pdf to image
   // eslint-disable-next-line
   const pdfDoc = await pdfjsLib.getDocument({
     data: pdf,
@@ -72,7 +72,7 @@ export async function extractQRFromPDF(pdf: Buffer): Promise<string[]> {
     const page = await pdfDoc.getPage(pageCount)
 
     // Render the page on a Node canvas with 100% scale.
-    const viewport = page.getViewport({ scale: 1.42 })
+    const viewport = page.getViewport({ scale: scaleFactor })
     const canvasFactory = new NodeCanvasFactory()
     const canvasAndContext = canvasFactory.create(
       viewport.width,

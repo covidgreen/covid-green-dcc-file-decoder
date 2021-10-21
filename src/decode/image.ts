@@ -17,7 +17,7 @@ const splitImage = async (source: Buffer): Promise<Jimp[]> => {
   // uncroppedLeft.write(path.join(__dirname, 'myimage1.png'))
 
   const width = Math.floor(uncroppedRight.bitmap.width / 2)
-  const offset = Math.floor(width * 0.2)
+  const offset = Math.floor(width * 0.1)
   await uncroppedRight.crop(
     width - offset,
     0,
