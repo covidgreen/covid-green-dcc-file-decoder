@@ -2,7 +2,7 @@ import { extractQRFromImage, extractQRFromPDF } from './decode'
 
 enum scaleOptions {
   standard = 2.0,
-  fallback = 1.4
+  fallback = 1.4,
 }
 
 const findQRData = async (source: InputSource): Promise<string[]> => {

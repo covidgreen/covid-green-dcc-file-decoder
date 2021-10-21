@@ -54,7 +54,10 @@ NodeCanvasFactory.prototype = {
   },
 }
 
-export async function extractQRFromPDF(pdf: Buffer, scaleFactor: number): Promise<string[]> {
+export async function extractQRFromPDF(
+  pdf: Buffer,
+  scaleFactor: number
+): Promise<string[]> {
   // convert pdf to image
   // eslint-disable-next-line
   const pdfDoc = await pdfjsLib.getDocument({
