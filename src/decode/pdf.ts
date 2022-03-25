@@ -13,7 +13,7 @@ const CMAP_PACKED = true
 
 type CanvasAndContext = {
   canvas: Canvas.Canvas
-  context: Canvas.NodeCanvasRenderingContext2D
+  context: Canvas.CanvasRenderingContext2D
 }
 
 // pdfjsLib.GlobalWorkerOptions.workerSrc = workerEntry
